@@ -93,6 +93,22 @@ namespace ProtoBuf.Reflection
         [global::ProtoBuf.ProtoMember(4, Name = @"dynamicType")]
         public bool DynamicType { get; set; }
 
+        [global::ProtoBuf.ProtoMember(5, Name = @"attribute")]
+        [global::ProtoBuf.ProtoMap]
+        public global::System.Collections.Generic.Dictionary<string, ProtogenFieldOptions.AttributeParams> Attribute { get; } = new global::System.Collections.Generic.Dictionary<string, ProtogenFieldOptions.AttributeParams>();
+
+        [global::ProtoBuf.ProtoContract()]
+        public partial class AttributeParams : global::ProtoBuf.IExtensible
+        {
+            private global::ProtoBuf.IExtension __pbn__extensionData;
+            global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+                => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+            [global::ProtoBuf.ProtoMember(1, Name = @"param")]
+            public global::System.Collections.Generic.List<string> Params { get; } = new global::System.Collections.Generic.List<string>();
+
+        }
+
     }
 
     [global::ProtoBuf.ProtoContract()]

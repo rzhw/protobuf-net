@@ -53,6 +53,10 @@ message ProtogenFieldOptions {
   Access access = 2;
   bool asRef = 3 [(.protobuf_net.fieldopt).name	= "AsReference"];
   bool dynamicType = 4 [(.protobuf_net.fieldopt).name	= "DynamicType"];
+  message AttributeParams {
+      repeated string param = 1;
+  }
+  map<string, AttributeParams> attribute = 5;
 }
 message ProtogenEnumOptions {
   string name = 1;
